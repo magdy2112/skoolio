@@ -18,7 +18,9 @@ return new class extends Migration
             $table->text('description');
             $table->date('date');
             $table->string('location');
-            $table->foreignid('created_by')->constrained(); // admin_id
+
+
+            $table->foreignid('admin_id')->constrained(); // admin_id
              $table->foreignId('level_id')->nullable()->constrained();
              $table->foreignId('class_id')->nullable()->constrained();
 

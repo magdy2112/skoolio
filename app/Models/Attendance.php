@@ -17,8 +17,12 @@ class Attendance extends Model
 
   ];
 
-    public function classname()
-    {
-        return $this->hasManyThrough(ClassName::class, Student::class);
-    }
+    // public function classname()
+    // {
+    //     return $this->hasManyThrough(ClassName::class, Student::class);
+    // }
+
+  public function student(){
+    return $this->belongsTo(Student::class,'student_id');
+  }
 }

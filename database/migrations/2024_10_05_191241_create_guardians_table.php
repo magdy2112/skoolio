@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('guardians', callback: function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+
+
             $table->string('email')->unique()->nullable();
             $table->string('password');
             $table->string('phone');

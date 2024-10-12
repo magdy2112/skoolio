@@ -14,7 +14,9 @@ class Student extends Model
         'age',
         'grade',
          'img',
-        'phone'];
+        'phone',
+    'gender',
+];
 
     public function level(){
      return $this->belongsTo(level::class,'level_id');
@@ -22,4 +24,28 @@ class Student extends Model
     public function classname(){
         return $this->belongsTo(classname::class,'class_id');
     }
+    public function teacher(){
+        return $this->belongsToMany(Teacher::class,'student__teacers', 'student_id','teacher_id');
+
+    }
+    public function guardian(){
+        return $this->belongsTo(Guardian::class,'guardian_id');
+    }
+
+    public function attend(){
+        return $this->hasMany(Attendance::class,'student_id');
+    }
+
+    public function schedules()
+    {
+        // return $this->classname->schedules;
+        return $this->hasManyThrough(Schedule::class,ClassName::class);
+        // return $this->through('ClassName')->has('Schedule');
+
+    }
+
+  
 }
+
+
+

@@ -26,20 +26,20 @@ class Teacher extends Model
             return $this->belongsToMany(ClassName::class, 'class_teachers','teacher_id','class_id');
         }
 
-        // public function students()
-        // {
-        //     return $this->belongsToMany(Student::class, 'schedules');
-        // }
+        public function students()
+        {
+            return $this->belongsToMany(Student::class, 'student__teacers','teacher_id','student_id');
+        }
 
-        // public function grades()
-        // {
-        //     return $this->hasManyThrough(Grade::class, Schedule::class);
-        // }
+        public function grade()
+        {
+            return $this->hasMany(Grade::class, 'teacher_id');
+        }
 
         // public function attendances()
         // {
         //     return $this->hasManyThrough(Attendance::class, Schedule::class);
-        // }
+        // }sggs
 
         public function homeworks()
         {

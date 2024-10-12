@@ -21,4 +21,7 @@ class Event extends Model
      public function classname(){
          return $this->belongsTo(ClassName::class,'class_id');
      }
+     public function creatby(){
+         return $this->belongsTo(User::class,'admin_id');
+     }
 }

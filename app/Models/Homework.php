@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Homework extends Model
 {
     use HasFactory;
-    protected $fillable = ['class_id', 'teacher_id','subject_id', 'description', 'due_date'];
+    protected $fillable = ['class_id', 'teacher_id','subject_id', 'description', 'due_date','level_id'];
 
     public function subject(){
         return $this->belongsTo(Subject::class,'subject_id');
@@ -19,7 +19,11 @@ class Homework extends Model
     }
 
     public function teacher(){
-        return $this->belongsTo(User::class, 'teacher_id');
+        return $this->belongsTo(Teacher::class, 'teacher_id');
+    }
+
+    public function level(){
+        return $this->belongsTo(Level::class, 'level_id');
     }
 
 

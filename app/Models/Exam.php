@@ -16,14 +16,23 @@ class Exam extends Model
         'exam_type',
         'exam_score',
         'total_score',
+        'level_id'
     ];
 
     public function subject(){
         return $this->belongsTo(Subject::class,'subject_id');
     }
 
-public function exam(){
+public function teacher(){
     return $this->belongsTo(Teacher::class,'teacher_id');
+}
+
+public function level(){
+    return $this->belongsTo(Level::class, 'level_id');
+}
+
+public function student(){
+    return $this->belongsTo(Student::class,'student_id');
 }
 
 

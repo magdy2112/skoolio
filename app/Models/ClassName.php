@@ -9,6 +9,7 @@ class ClassName extends Model
 {
     use HasFactory;
     protected $fillable = ['name'];
+    protected $table = 'class_names';
 
    public function level (){
      return $this->belongsTo(Level::class,'level_id');
@@ -30,5 +31,8 @@ class ClassName extends Model
    }
    public function attend(){
     return $this->hasManyThrough(Attendance::class,Student::class);
+   }
+   public function teacher(){
+     return $this->belongsToMany(Teacher::class,'class_teachers','class_id','teacher_id');
    }
 }

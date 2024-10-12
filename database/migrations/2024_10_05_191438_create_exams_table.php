@@ -13,9 +13,12 @@ return new class extends Migration
     {
         Schema::create('exams', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('student_id')->constrained();
+            // $table->foreignId('student_id')->constrained();
             $table->foreignId('subject_id')->constrained();
             $table->foreignId('teacher_id')->constrained();
+            $table->foreignId('level_id')->constrained();
+
+
             $table->enum('exam_type',['midterm','final']);
             $table->decimal('exam_score',5,2)->nullable();
             $table->integer('total_score')->nullable();
@@ -26,7 +29,7 @@ return new class extends Migration
     }
 
 
-  
+
 
 
     /**

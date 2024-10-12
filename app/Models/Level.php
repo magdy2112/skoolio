@@ -18,4 +18,10 @@ class Level extends Model
     public function event(){
         return   $this->hasMany( Event::class,'level_id');
     }
+    public function exam(){
+        return   $this->hasMany( Exam::class,'level_id');
+    }
+    public function homework(){
+        return   $this->hasMany(Homework::class,'level_id');
+    }
 }

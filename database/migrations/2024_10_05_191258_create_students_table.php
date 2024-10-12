@@ -20,6 +20,9 @@ return new class extends Migration
             $table->foreignId('guardian_id')->constrained();
             $table->foreignId( 'class_id')->constrained();
             $table->foreignId('level_id')->constrained();
+           
+
+            $table->enum('gender',['male','female']);
             $table->timestamp('created_at');
             $table->timestamp('updated_at')->nullable();
             $table->softDeletes()->nullable();
