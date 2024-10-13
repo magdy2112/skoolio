@@ -44,8 +44,21 @@ class Student extends Model
 
     }
 
-  
+    public function exams()
+    {
+        return $this->belongsToMany(Exam::class, 'exam_students')
+                    ->withPivot('score');
+
+    }
+
+    public function homework()
+    {
+        return $this->belongsToMany(Homework::class, 'homework_student')->withTimestamps();
+    }
 }
+
+
+
 
 
 

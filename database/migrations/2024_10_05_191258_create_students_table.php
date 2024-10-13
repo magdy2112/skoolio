@@ -13,14 +13,16 @@ return new class extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->string('email')->unique()->nullable();
             $table->string('password');
+            $table->foreignId('guardian_id')->constrained();
+            $table->foreignId('level_id')->constrained();
+
             $table->string('phone');
             $table->string('img')->nullable();
-            $table->foreignId('guardian_id')->constrained();
-            $table->foreignId( 'class_id')->constrained();
-            $table->foreignId('level_id')->constrained();
-           
+            $table->foreignId( 'class_id')->constrained('class_names');
+
 
             $table->enum('gender',['male','female']);
             $table->timestamp('created_at');

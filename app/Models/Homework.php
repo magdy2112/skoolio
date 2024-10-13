@@ -26,7 +26,10 @@ class Homework extends Model
         return $this->belongsTo(Level::class, 'level_id');
     }
 
-
+    public function students()
+    {
+        return $this->belongsToMany(Student::class, 'homework_student')->withTimestamps();
+    }
 
 
 }

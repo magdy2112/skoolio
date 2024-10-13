@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('homework', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('class_id')->constrained();
+            $table->foreignId('class_id')->constrained('class_names');
             $table->foreignId('teacher_id')->constrained();
             $table->foreignId('subject_id')->constrained();
             $table->foreignId('level_id')->constrained();
-            
+
 
 
             $table->text('description');

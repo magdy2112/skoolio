@@ -31,10 +31,19 @@ public function level(){
     return $this->belongsTo(Level::class, 'level_id');
 }
 
-public function student(){
-    return $this->belongsTo(Student::class,'student_id');
+// public function student(){
+//     return $this->belongsTo(Student::class,'student_id');
+// }
+public function student()
+{
+    return $this->belongsToMany(Student::class, 'exam_students')
+                ->withPivot('score');
+
 }
 
-
+public function getExamScores()
+{
+    return $this->exams->pluck('pivot.score', 'name'); // Or any other identifier for exams
+}
 
 }

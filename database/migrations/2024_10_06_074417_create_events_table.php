@@ -17,12 +17,12 @@ return new class extends Migration
             $table->string('title');
             $table->text('description');
             $table->date('date');
-            $table->string('location');
 
 
-            $table->foreignid('admin_id')->constrained(); // admin_id
+
+            $table->foreignid('user_id')->constrained(); // admin_id
              $table->foreignId('level_id')->nullable()->constrained();
-             $table->foreignId('class_id')->nullable()->constrained();
+             $table->foreignId('class_id')->nullable()->constrained('class_names');
 
 
             $table->timestamp('created_at');

@@ -17,11 +17,8 @@ return new class extends Migration
             $table->foreignId('subject_id')->constrained();
             $table->foreignId('teacher_id')->constrained();
             $table->foreignId('level_id')->constrained();
-
-
             $table->enum('exam_type',['midterm','final']);
-            $table->decimal('exam_score',5,2)->nullable();
-            $table->integer('total_score')->nullable();
+            $table->integer('exam_score')->default(100);
             $table->timestamp('created_at');
             $table->timestamp('updated_at')->nullable();
             $table->softDeletes()->nullable();

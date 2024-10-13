@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('teacher_id')->constrained();
             $table->foreignId('subject_id')->constrained();
             $table->foreignId('student_id')->constrained();
-            $table->decimal('grade',5,2);
+            $table->decimal('grade',5,2)->nullable();
             $table->timestamp('created_at');
             $table->timestamp('updated_at')->nullable();
             $table->softDeletes()->nullable();

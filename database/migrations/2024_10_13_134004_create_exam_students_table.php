@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Level;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('class_names', callback: function (Blueprint $table) {
+        Schema::create('exam_students', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->foreignId('level_id')->constrained();
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at')->nullable();
-            $table->softDeletes()->nullable();
+            $table->foreignId('student_id')->constrained();
+            $table->foreignId('exam_id')->constraind();
+            $table->decimal('score', 5, 2)->nullable(); // Example of extra attribute
+            $table->timestamps();
         });
     }
 
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('class_names');
+        Schema::dropIfExists('exam_students');
     }
 };
