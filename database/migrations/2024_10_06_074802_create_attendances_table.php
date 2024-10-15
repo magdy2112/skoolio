@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
 
             $table->foreignId( 'student_id')->constrained();
-            // $table->foreignId('class_id')->constrained();
+
             $table->date('date');
             $table->enum('status', ['Present', 'Absent', 'Late']);  // Enum to store status (Present, Absent, Late)
             $table->timestamp('created_at');

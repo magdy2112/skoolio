@@ -52,4 +52,13 @@ class Guardian extends Model
 {
     return $this->hasManyThrough(Teacher::class, Student_Teacer::class );
 }
+
+public function messages()
+{
+    return $this->hasMany(behaviour::class);
+}
+public function behav (){
+    return $this->hasManyThrough(behaviour::class,Student::class);
+}
+
 }

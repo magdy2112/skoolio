@@ -16,6 +16,7 @@ class Student extends Model
          'img',
         'phone',
     'gender',
+    'age'
 ];
 
     public function level(){
@@ -55,6 +56,11 @@ class Student extends Model
     {
         return $this->belongsToMany(Homework::class, 'homework_student')->withTimestamps();
     }
+
+    public function behav()
+{
+    return $this->hasMany(behaviour::class);
+}
 }
 
 

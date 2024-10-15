@@ -36,3 +36,5 @@ class ClassName extends Model
      return $this->belongsToMany(Teacher::class,'class_teachers','class_id','teacher_id');
    }
 }
+
+

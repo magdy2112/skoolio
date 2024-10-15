@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('homework_students', function (Blueprint $table) {
+        Schema::create('behaviours', function (Blueprint $table) {
             $table->id();
+
             $table->foreignId('student_id')->constrained();
-            $table->foreignId('homework_id')->constrained();
+
+            $table->text('message');
             $table->timestamp('created_at');
             $table->timestamp('updated_at')->nullable();
             $table->softDeletes()->nullable();
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('homework__students');
+        Schema::dropIfExists('behaviours');
     }
 };

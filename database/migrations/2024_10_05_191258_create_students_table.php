@@ -18,10 +18,13 @@ return new class extends Migration
             $table->string('password');
             $table->foreignId('guardian_id')->constrained();
             $table->foreignId('level_id')->constrained();
+            $table->foreignId( 'class_id')->constrained('class_names');
 
             $table->string('phone');
+            $table->integer('age');
+
+
             $table->string('img')->nullable();
-            $table->foreignId( 'class_id')->constrained('class_names');
 
 
             $table->enum('gender',['male','female']);
