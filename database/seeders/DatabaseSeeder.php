@@ -56,7 +56,7 @@ class DatabaseSeeder extends Seeder
     Event::factory(20)->create();
     Attendance::factory(400)->create();
     Class_Teacher::factory(80)->create();
-    Student_Teacer::factory(80)->create();
+    // Student_Teacer::factory(80)->create();
     Homework_Student::factory(100)->create();
     Exam_student::factory(150)->create();
     behaviour::factory(60)->create();

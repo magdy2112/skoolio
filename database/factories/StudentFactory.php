@@ -5,6 +5,7 @@ namespace Database\Factories;
 use App\Models\ClassName;
 use App\Models\Guardian;
 use App\Models\Level;
+use App\Models\Teacher;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 
@@ -30,7 +31,9 @@ class StudentFactory extends Factory
             'age' => $this->faker->numberBetween(5,18),
             'class_id'=>ClassName::all()->random()->id,
 
-           
+
+
+
             'phone' => $this->faker->phoneNumber(),
             'gender' => $this->faker->randomElement(['male', 'female']),
 

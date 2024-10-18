@@ -8,3 +8,4 @@ class StudentTeacerController extends Controller
 {
     //
 }
+

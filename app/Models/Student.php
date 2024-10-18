@@ -16,7 +16,8 @@ class Student extends Model
          'img',
         'phone',
     'gender',
-    'age'
+    'age',
+
 ];
 
     public function level(){
@@ -25,10 +26,11 @@ class Student extends Model
     public function classname(){
         return $this->belongsTo(classname::class,'class_id');
     }
-    public function teacher(){
-        return $this->belongsToMany(Teacher::class,'student__teacers', 'student_id','teacher_id');
+    // public function teacher(){
+    //     return $this->belongsToMany(Teacher::class,'student__teacers', 'student_id','teacher_id');
 
-    }
+    //  }
+
     public function guardian(){
         return $this->belongsTo(Guardian::class,'guardian_id');
     }
