@@ -11,6 +11,6 @@ class TeacherController extends Controller
 {
     public function export()
     {
-        return Excel::download(new TeacherExport, 'users.xlsx');
+
     }
 }

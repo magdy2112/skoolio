@@ -11,14 +11,16 @@ class Student extends Model
 
     protected $fillable = [
         'name',
-        'age',
-        'grade',
-         'img',
+        'email',
+        'password',
+        'guardian_id',
+        'level_id',
+        'class_id',
         'phone',
-    'gender',
-    'age',
-
-];
+        'age',
+        'img',
+        'gender',
+    ];
 
     public function level(){
      return $this->belongsTo(level::class,'level_id');
