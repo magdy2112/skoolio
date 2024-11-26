@@ -1,5 +1,6 @@
 <?php
 
+use App\Enum\GenderEnum;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -22,7 +23,7 @@ return new class extends Migration
             $table->string('phone');
             $table->integer('age');
             $table->string('img')->nullable();
-            $table->enum('gender',['male','female']);
+            $table->enum('gender', array_column(GenderEnum::cases(), 'value'));
             $table->timestamp('created_at');
             $table->timestamp('updated_at')->nullable();
             $table->softDeletes()->nullable();

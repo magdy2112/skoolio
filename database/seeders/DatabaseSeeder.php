@@ -32,36 +32,34 @@ use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
-class DatabaseSeeder extends Seeder
-{
+class DatabaseSeeder extends Seeder {
     /**
-     * Seed the application's database.
-     *
-     * @return void
-     */
-    public function run()
-    {
+    * Seed the application's database.
+    *
+    * @return void
+    */
 
-    User::factory()->count(3)->create();
-    Level::factory()->count(12)->create();
-    Subject::factory()->count(8)->create();
-    ClassName::factory()->count(30)->create();
-    Teacher::factory(80)->create();
-    Guardian::factory(10)->create();
-    Homework::factory(100)->create();
-    Student::factory(300)->create();
-    Schedule::factory(30)->create();
-    Grade::factory(100)->create();
-    Exam::factory(40)->create();
-    Event::factory(20)->create();
-    Attendance::factory(400)->create();
-    Class_Teacher::factory(80)->create();
-    // Student_Teacer::factory(80)->create();
-    Homework_Student::factory(100)->create();
-    Exam_student::factory(150)->create();
-    behaviour::factory(60)->create();
+    public function run() {
 
-}
+        User::factory()->count( 3 )->create();
+        Level::factory()->count( 12 )->create();
+        Subject::factory()->count( 8 )->create();
+        ClassName::factory()->count( 30 )->create();
+        Teacher::factory( 80 )->create();
+        Guardian::factory( 10 )->create();
+        Homework::factory( 100 )->create();
+        Student::factory( 10000 )->create();
+        Schedule::factory( 30 )->create();
+        Grade::factory( 100 )->create();
+        Exam::factory( 40 )->create();
+        Event::factory( 20 )->create();
+        Attendance::factory( 400 )->create();
+        Class_Teacher::factory( 80 )->create();
+        // Student_Teacer::factory( 80 )->create();
+        Homework_Student::factory( 100 )->create();
+        Exam_student::factory( 150 )->create();
+        behaviour::factory( 60 )->create();
 
+    }
 
 }

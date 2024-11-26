@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Enum\GenderEnum;
 use App\Models\ClassName;
 use App\Models\Guardian;
 use App\Models\Level;
@@ -35,7 +36,7 @@ class StudentFactory extends Factory
 
 
             'phone' => $this->faker->phoneNumber(),
-            'gender' => $this->faker->randomElement(['male', 'female']),
+            'gender' => $this->faker->randomElement(array_column(GenderEnum::cases(), 'value')),
 
 
         ];

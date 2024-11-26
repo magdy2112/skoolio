@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('phone');
             $table->string('img')->nullable();
+            $table->fullText(['name', 'email']);
             $table->timestamp('created_at');
             $table->timestamp('updated_at')->nullable();
             $table->softDeletes()->nullable();
